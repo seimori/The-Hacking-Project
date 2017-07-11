@@ -23,4 +23,12 @@ end
 
 dictionary = ["the", "of", "and","to", "a", "in", "for", "is", "on", "that", "by", "this", "with", "i", "you", "it", "not", "or", "be", "are"]
 
-get_word_count("the best and the worst", dictionary)
+def convert_txt_to_array(txt)
+	text = get_file_as_string(txt)
+	array = text.split(' ')
+	return array
+end
+
+bad_dictionary = convert_txt_to_array("swearWords.txt")
+
+get_word_count("the best and the worst", bad_dictionary)
