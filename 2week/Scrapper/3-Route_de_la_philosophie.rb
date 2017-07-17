@@ -23,17 +23,17 @@ def get_link(start_url)
 			start_url_archive = page.xpath('/html/head/link[11]/@href')
 		end
 		puts "Next: #{whole_link}"
-		break if whole_link == "https://en.wikipedia.org/wiki/Verificationism"
+		break if whole_link == "https://en.wikipedia.org/wiki/Philosophy"
 	end
-	puts "\nVerificationism scan finished!\n
-	#{counter} steps from #{start_archive} to Verificationism\n
+	puts "\nPhilosophy scan finished!\n
+	#{counter} steps from #{start_archive} to Philosophy\n
 	Go try it yourself! => #{start_url_archive}"
 end
 def remove_parenthese_link(url)
-	first_paragraph = url.xpath('//div/p[1]')
+	first_paragraph = url.xpath('//p')
 	first_paragraph = first_paragraph.to_s.gsub(/\([^()]*\)/,'')
-	first_paragraph = Nokogiri::HTML(first_paragraph)
-	link = first_paragraph.xpath('//p[1]/a[1]/@href')
+	first_paragraph_mod = Nokogiri::HTML(first_paragraph)
+	link = first_paragraph_mod.xpath('//p[1]/a[1]/@href')
 	link
 
 end
