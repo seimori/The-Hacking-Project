@@ -2,7 +2,10 @@ require 'pry'
 require_relative 'boardcase'
 
 class Board
-  attr_accessor :grid_hash
+  attr_accessor :grid_hash, :a1_case, :b1_case, :c1_case,
+    :a2_case, :b2_case, :c2_case,
+    :a3_case, :b3_case, :c3_case
+
   def initialize
     @grid_hash = Hash.new
     @grid_hash = {a1: 6, b1: 1, c1: 8,
@@ -47,9 +50,9 @@ class Board
   end
 end
 
-test = Board.new
+#test = Board.new
 #puts test.grid_hash
 #binding.pry
 
 #puts "end code"
-test.display_board
+#test.display_board
